@@ -321,13 +321,10 @@ input[type="button"] {
   color: black;
   margin-bottom: 2.4em;
   position: relative;
-  min-height: 100px;
-  transition: all 150ms cubic-bezier(0.22, 0.61, 0.36, 1); }
+  min-height: 100px; }
   @media (max-width: 480px) {
     .point {
       font-size: 16px; } }
-  .point:hover {
-    transform: scale(1.2); }
 
 .num {
   color: rgba(0, 0, 0, 0.1);
@@ -357,3 +354,34 @@ h1 {
     border-bottom: 8px solid black;
     display: inline;
     margin-bottom: 30px; }
+
+.spin {
+  transform: scale(0.7);
+  background: pink; }
+  .spin .points {
+    position: relative; }
+  .spin .point {
+    transform-origin: center left;
+    text-align: right;
+    position: absolute;
+    padding-right: 200px; }
+  .spin .point-1 {
+    transform: rotate(36deg); }
+  .spin .point-2 {
+    transform: rotate(72deg); }
+  .spin .point-3 {
+    transform: rotate(108deg); }
+  .spin .point-4 {
+    transform: rotate(144deg); }
+  .spin .point-5 {
+    transform: rotate(180deg); }
+  .spin .point-6 {
+    transform: rotate(216deg); }
+  .spin .point-7 {
+    transform: rotate(252deg); }
+  .spin .point-8 {
+    transform: rotate(288deg); }
+  .spin .point-9 {
+    transform: rotate(324deg); }
+  .spin .point-10 {
+    transform: rotate(360deg); }
