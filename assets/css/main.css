@@ -355,33 +355,58 @@ h1 {
     display: inline;
     margin-bottom: 30px; }
 
+.options {
+  position: absolute;
+  top: 0px;
+  right: 20px;
+  text-align: right; }
+
 .spin {
-  transform: scale(0.7);
-  background: pink; }
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden; }
+  .spin .decoration {
+    display: none; }
+  .spin .content {
+    max-width: none;
+    position: relative;
+    height: 100vh; }
+  .spin .num {
+    left: 0px; }
   .spin .points {
-    position: relative; }
-  .spin .point {
-    transform-origin: center left;
-    text-align: right;
     position: absolute;
-    padding-right: 200px; }
+    left: -500px;
+    top: 10%;
+    transition: all 200ms ease-in-out;
+    transform: rotate(-36deg);
+    transform-origin: center left;
+    height: 0px;
+    width: 0px; }
+  .spin .point {
+    transform-origin: top left;
+    position: absolute;
+    width: 50vh;
+    padding: 20px; }
+  .spin .point:nth-child(odd) .num {
+    right: auto;
+    left: 0px; }
   .spin .point-1 {
-    transform: rotate(36deg); }
+    transform: rotate(36deg) translate(500px, 0px); }
   .spin .point-2 {
-    transform: rotate(72deg); }
+    transform: rotate(72deg) translate(500px, 0px); }
   .spin .point-3 {
-    transform: rotate(108deg); }
+    transform: rotate(108deg) translate(500px, 0px); }
   .spin .point-4 {
-    transform: rotate(144deg); }
+    transform: rotate(144deg) translate(500px, 0px); }
   .spin .point-5 {
-    transform: rotate(180deg); }
+    transform: rotate(180deg) translate(500px, 0px); }
   .spin .point-6 {
-    transform: rotate(216deg); }
+    transform: rotate(216deg) translate(500px, 0px); }
   .spin .point-7 {
-    transform: rotate(252deg); }
+    transform: rotate(252deg) translate(500px, 0px); }
   .spin .point-8 {
-    transform: rotate(288deg); }
+    transform: rotate(288deg) translate(500px, 0px); }
   .spin .point-9 {
-    transform: rotate(324deg); }
+    transform: rotate(324deg) translate(500px, 0px); }
   .spin .point-10 {
-    transform: rotate(360deg); }
+    transform: rotate(360deg) translate(500px, 0px); }

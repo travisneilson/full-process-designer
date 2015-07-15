@@ -53,22 +53,50 @@ h1
     display: inline
     margin-bottom: 30px
 
+.options
+  position: absolute
+  top: 0px
+  right: 20px
+  text-align: right
 
 
 
 .spin
-  transform: scale(0.7)
-  background: pink
+  width: 100vw
+  height: 100vh
+  overflow: hidden
+
+  .decoration
+    display: none
+
+  .content
+    max-width: none
+    position: relative
+    height: 100vh
+
+  .num
+    left: 0px
 
   .points
-    position: relative
+    position: absolute
+    left: -500px
+    top: 10%
+    transition: all 200ms ease-in-out
+    transform: rotate(-36deg)
+    transform-origin: center left
+    height: 0px
+    width: 0px
 
   .point
-    transform-origin: center left
-    text-align: right
+    transform-origin: top left
     position: absolute
-    padding-right: 200px
+    width: 50vh
+    padding: 20px
+
+  .point:nth-child(odd) .num
+    right: auto
+    left: 0px
 
   @for $i from 1 through 10
     .point-#{$i}
-      transform: rotate(36deg * $i)
+      transform: rotate(36deg * $i) translate(500px, 0px)
