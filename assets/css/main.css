@@ -311,6 +311,10 @@ input[type="button"] {
   background-size: contain;
   z-index: -2; }
 
+.trigger-next,
+.trigger-prev {
+  display: none; }
+
 .content {
   max-width: 600px;
   padding: 0px 10px;
@@ -365,8 +369,9 @@ h1 {
   width: 100vw;
   height: 100vh;
   overflow: hidden; }
-  .spin .decoration {
-    display: none; }
+  .spin .trigger-next,
+  .spin .trigger-prev {
+    display: block; }
   .spin .content {
     max-width: none;
     position: relative;
@@ -375,18 +380,22 @@ h1 {
     left: 0px; }
   .spin .points {
     position: absolute;
-    left: -500px;
-    top: 10%;
+    left: -300px;
+    top: 50%;
     transition: all 200ms ease-in-out;
-    transform: rotate(-36deg);
+    transform: rotate(-36deg) translateY(-50%);
     transform-origin: center left;
     height: 0px;
     width: 0px; }
   .spin .point {
     transform-origin: top left;
     position: absolute;
-    width: 50vh;
-    padding: 20px; }
+    width: 50vw;
+    padding: 20px;
+    opacity: 0.15;
+    transition: all 200ms ease-in-out; }
+    .spin .point.is-focused {
+      opacity: 1; }
   .spin .point:nth-child(odd) .num {
     right: auto;
     left: 0px; }

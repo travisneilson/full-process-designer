@@ -8,6 +8,10 @@
   background-size: contain
   z-index: -2
 
+.trigger-next,
+.trigger-prev
+  display: none
+
 .content
   max-width: 600px
   padding: 0px 10px
@@ -66,8 +70,12 @@ h1
   height: 100vh
   overflow: hidden
 
+  .trigger-next,
+  .trigger-prev
+    display: block
+
   .decoration
-    display: none
+    //display: none
 
   .content
     max-width: none
@@ -79,10 +87,10 @@ h1
 
   .points
     position: absolute
-    left: -500px
-    top: 10%
+    left: -300px
+    top: 50%
     transition: all 200ms ease-in-out
-    transform: rotate(-36deg)
+    transform: rotate(-36deg) translateY(-50%)
     transform-origin: center left
     height: 0px
     width: 0px
@@ -90,12 +98,19 @@ h1
   .point
     transform-origin: top left
     position: absolute
-    width: 50vh
+    width: 50vw
     padding: 20px
+    opacity: 0.15
+    transition: all 200ms ease-in-out
+
+    &.is-focused
+      opacity: 1
 
   .point:nth-child(odd) .num
     right: auto
     left: 0px
+
+
 
   @for $i from 1 through 10
     .point-#{$i}
