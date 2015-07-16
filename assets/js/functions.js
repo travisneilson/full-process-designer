@@ -50,3 +50,18 @@ function rotateNext(){
     .siblings().removeClass('is-focused');
   }
 }
+
+$(document).keydown(function(e) {
+    switch(e.which) {
+
+      case 40:
+      rotateNext();
+      break;
+
+      case 38:
+      rotatePrev();
+      break;
+
+      default: return;
+  }
+});
