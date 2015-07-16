@@ -313,7 +313,8 @@ input[type="button"] {
 
 .trigger-next,
 .trigger-prev {
-  display: none; }
+  display: none;
+  cursor: pointer; }
 
 .content {
   max-width: 600px;
