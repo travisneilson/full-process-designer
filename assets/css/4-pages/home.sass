@@ -1,3 +1,4 @@
+// Decoration
 .decoration
   position: fixed
   top: 0
@@ -8,43 +9,125 @@
   background-size: contain
   z-index: -2
 
+
+// Options
+.options
+  position: fixed
+  top: 30px
+  right: 30px
+  text-align: right
+  z-index: 3
+
 .trigger-next,
 .trigger-prev
   display: none
 
+  .spin &
+    display: block
+
+.toggle-display-type
+  position: relative
+  height: 30px
+  width: 50px
+  cursor: pointer
+  opacity: 0.6
+  transition: all 150ms cubic-bezier(0, 0, 0.42, 2.6)
+
+  @media (max-width: 640px)
+    display: none
+
+  &:hover
+    transform: scale(1.1)
+    opacity: 1
+
+  [class^="icon-line"]
+    display: block
+    position: absolute
+    width: 50px
+    height: 6px
+    background: black
+    top: 50%
+    margin-top: -3px
+    transform-origin: left center
+    transition: all 300ms cubic-bezier(0, 0, 0.42, 1.6)
+
+  .icon-line-1
+    top: -10%
+    width: 10px
+    transform: rotate(-90deg)
+
+  .icon-line-2
+    top: 40%
+    width: 30px
+    transform: rotate(-45deg) translate(10px, 0px)
+
+  .icon-line-4
+    top: 60%
+    width: 30px
+    transform: rotate(45deg) translate(10px, 0px)
+
+  .icon-line-5
+    top: 110%
+    width: 10px
+    transform: rotate(90deg)
+
+  .icon-line-3
+    transform: rotate(0deg) translate(10px, 0px)
+
+  .spin &
+    [class^="icon-line"]
+      transform: rotate(0deg)
+
+    .icon-line-1
+      top: 0%
+      width: 50px
+
+    .icon-line-5
+      top: 100%
+      width: 50px
+
+    .icon-line-2,
+    .icon-line-4
+      width: 0px
+
+.rotate-triggers
+  margin-top: 30px
+
+  > div
+    cursor: pointer
+    opacity: 0.6
+    transition: all 150ms cubic-bezier(0, 0, 0.42, 2.6)
+
+    &:hover
+      transform: scale(1.1)
+      opacity: 1
+
+  .trigger-prev
+    width: 0
+    height: 0
+    border-left: 25px solid transparent
+    border-right: 25px solid transparent
+    border-bottom: 50px solid black
+
+  .trigger-next
+    width: 0
+    height: 0
+    border-left: 25px solid transparent
+    border-right: 25px solid transparent
+    border-top: 50px solid black
+    margin-top: 10px
+
+// Content
 .content
   max-width: 600px
   padding: 0px 10px
   margin: 0 auto
 
-.point
-  font-size: 18px
-  color: black
-  margin-bottom: 2.4em
-  position: relative
-  min-height: 100px
-
-  @media (max-width: 480px)
-    font-size: 16px
-
-.num
-  color: fade-out(black, 0.9)
-  position: absolute
-  top: 0px
-  left: -20px
-  font-size: 120px
-  line-height: 1
-  z-index: -1
-
-.point:nth-child(odd) .num
-  right: -20px
-  left: auto
-
-.note
-  color: #666
-  font-size: 14px
-  padding-left: 20px
-  display: block
+  .spin &
+    max-width: none
+    height: 100vh
+    position: relative
+    overflow: hidden
 
 h1
   line-height: 1.5
@@ -57,33 +140,62 @@ h1
     display: inline
     margin-bottom: 30px
 
-.options
+.point
+  font-size: 18px
+  color: black
+  margin-bottom: 2.4em
+  position: relative
+  min-height: 100px
+  transition: all 300ms ease-in-out
+
+  @media (max-width: 480px)
+    font-size: 16px
+
+  .spin &
+    transform-origin: top left
+    position: absolute
+    width: 50vw
+    padding: 20px
+    opacity: 0.15
+    transition: all 200ms ease-in-out
+
+    &.is-focused
+      opacity: 1
+
+
+.num
+  color: fade-out(black, 0.9)
   position: absolute
   top: 0px
-  right: 20px
-  text-align: right
+  left: -20px
+  font-size: 120px
+  line-height: 1
+  z-index: -1
+
+  .spin &
+    left: 0px
+
+.point:nth-child(odd) .num
+  right: -20px
+  left: auto
+
+
+.note
+  color: #666
+  font-size: 14px
+  padding-left: 20px
+  display: block
 
 
 
+
+
+// Spin Display type
 .spin
   width: 100vw
   height: 100vh
   overflow: hidden
 
-  .trigger-next,
-  .trigger-prev
-    display: block
-
-  .decoration
-    //display: none
-
-  .content
-    max-width: none
-    position: relative
-    height: 100vh
-
-  .num
-    left: 0px
 
   .points
     position: absolute
@@ -95,22 +207,9 @@ h1
     height: 0px
     width: 0px
 
-  .point
-    transform-origin: top left
-    position: absolute
-    width: 50vw
-    padding: 20px
-    opacity: 0.15
-    transition: all 200ms ease-in-out
-
-    &.is-focused
-      opacity: 1
-
   .point:nth-child(odd) .num
     right: auto
     left: 0px
-
-
 
   @for $i from 1 through 10
     .point-#{$i}
