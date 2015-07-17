@@ -393,6 +393,18 @@ input[type="button"] {
     border-left: 25px solid transparent;
     border-right: 25px solid transparent;
     border-bottom: 50px solid black; }
+    .rotate-triggers .trigger-prev:after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 0;
+      position: relative;
+      top: 11px;
+      border-left: 18px solid transparent;
+      border-right: 18px solid transparent;
+      border-bottom: 34px solid white;
+      margin-left: -18px;
+      pointer-events: none; }
   .rotate-triggers .trigger-next {
     width: 0;
     height: 0;
@@ -400,11 +412,23 @@ input[type="button"] {
     border-right: 25px solid transparent;
     border-top: 50px solid black;
     margin-top: 10px; }
+    .rotate-triggers .trigger-next:after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 0;
+      position: relative;
+      top: -45px;
+      border-left: 18px solid transparent;
+      border-right: 18px solid transparent;
+      border-top: 34px solid white;
+      margin-left: -18px; }
 
 .content {
   max-width: 600px;
   padding: 0px 10px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  box-sizing: border-box; }
   .spin .content {
     max-width: none;
     height: 100vh;
@@ -445,16 +469,10 @@ h1 {
   color: rgba(0, 0, 0, 0.1);
   position: absolute;
   top: 0px;
-  left: -20px;
+  left: 0px;
   font-size: 120px;
   line-height: 1;
   z-index: -1; }
-  .spin .num {
-    left: 0px; }
-
-.point:nth-child(odd) .num {
-  right: -20px;
-  left: auto; }
 
 .note {
   color: #666;

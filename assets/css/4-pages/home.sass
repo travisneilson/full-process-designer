@@ -109,6 +109,20 @@
     border-right: 25px solid transparent
     border-bottom: 50px solid black
 
+    &:after
+      content: ''
+      display: block
+      width: 0
+      height: 0
+      position: relative
+      top: 11px
+      border-left: 18px solid transparent
+      border-right: 18px solid transparent
+      border-bottom: 34px solid white
+      margin-left: -18px
+      pointer-events: none
+
+
   .trigger-next
     width: 0
     height: 0
@@ -117,11 +131,24 @@
     border-top: 50px solid black
     margin-top: 10px
 
+    &:after
+      content: ''
+      display: block
+      width: 0
+      height: 0
+      position: relative
+      top: -45px
+      border-left: 18px solid transparent
+      border-right: 18px solid transparent
+      border-top: 34px solid white
+      margin-left: -18px
+
 // Content
 .content
   max-width: 600px
   padding: 0px 10px
   margin: 0 auto
+  box-sizing: border-box
 
   .spin &
     max-width: none
@@ -167,17 +194,10 @@ h1
   color: fade-out(black, 0.9)
   position: absolute
   top: 0px
-  left: -20px
+  left: 0px
   font-size: 120px
   line-height: 1
   z-index: -1
-
-  .spin &
-    left: 0px
-
-.point:nth-child(odd) .num
-  right: -20px
-  left: auto
 
 
 .note
