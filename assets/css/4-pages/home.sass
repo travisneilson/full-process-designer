@@ -5,10 +5,11 @@
   bottom: 0
   left: 0
   right: 0
-  background: url(../img/line.svg) no-repeat center top
-  background-size: contain
   z-index: -2
 
+.svg-angle
+  fill: #FFDC00
+  transition: all 150ms ease-in-out
 
 // Options
 .options
@@ -158,6 +159,9 @@
 
 h1
   line-height: 1.5
+
+  .spin &
+    margin-left: 30px
 
   @media (max-width: 480px)
     font-size: 48px
