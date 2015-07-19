@@ -307,9 +307,11 @@ input[type="button"] {
   bottom: 0;
   left: 0;
   right: 0;
-  background: url(../img/line.svg) no-repeat center top;
-  background-size: contain;
   z-index: -2; }
+
+.svg-angle {
+  fill: #FFDC00;
+  transition: all 150ms ease-in-out; }
 
 .options {
   position: fixed;
@@ -437,6 +439,8 @@ input[type="button"] {
 
 h1 {
   line-height: 1.5; }
+  .spin h1 {
+    margin-left: 30px; }
   @media (max-width: 480px) {
     h1 {
       font-size: 48px; } }
